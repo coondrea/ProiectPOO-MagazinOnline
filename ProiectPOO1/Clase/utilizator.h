@@ -6,28 +6,32 @@
 
 namespace Online_Store {
 
+// Clasa de baza abstracta pentru toti utilizatorii magazinului
 class Utilizator {
 protected:
-    int m_id;
-    std::string m_nume_utilizator;
-    std::string m_email;
+    int m_id;                          // ID unic al utilizatorului
+    std::string m_nume_utilizator;    // Numele de utilizator
+    std::string m_email;              // Adresa de email
 
 public:
-    Utilizator();
-    Utilizator(int id, const std::string& nume_utilizator, const std::string& email);
-    virtual ~Utilizator();
+    Utilizator(); // Constructor implicit
+    Utilizator(int id, const std::string& nume_utilizator, const std::string& email); // Constructor cu parametri
+    virtual ~Utilizator(); // Destructor virtual
 
-    // Getteri
+    // Getteri pentru accesarea membrilor privati
     int GetId() const;
     std::string GetNumeUtilizator() const;
     std::string GetEmail() const;
 
-    // Setteri
+    // Setter pentru modificarea emailului
     void SetEmail(const std::string& email);
 
-    // Metode virtuale pure
+    // Metode virtuale pure ce trebuie implementate de clasele derivate
     virtual void AfiseazaProfil() const = 0;
     virtual std::string GetTipUtilizator() const = 0;
 };
 
-} // namespace
+} // namespace Online_Store
+
+#endif
+
