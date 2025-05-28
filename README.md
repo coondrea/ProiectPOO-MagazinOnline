@@ -7,3 +7,5 @@ Datele sunt stocate în fișiere `.txt`, iar la rularea programului, datele deja
 Proiectul este realizat respectând cerințele și coding guideline-ul primit în cadrul laboratorului de POO. Au fost utilizate concepte OOP precum moștenirea, polimorfismul, încapsularea, clase cu membri statici, obiecte stocate pe heap și pe stack, operator overloading, funcții virtuale și structuri auxiliare.  
 
 Pentru a rula programul, este necesară compilarea manuală a fișierelor. Se deschide terminalul (cmd) în directorul principal al proiectului, apoi se rulează comanda:   g++ main.cpp Clase/administrator.cpp Clase/client.cpp Clase/comanda.cpp Clase/cos_cumparaturi.cpp Clase/factura.cpp Clase/magazin.cpp Clase/produs_electronic.cpp Clase/.cpp Clase/produs.cpp Clase/utilizator.cpp 
+
+Proiectul a fost realizat in Visual Studio Code.
