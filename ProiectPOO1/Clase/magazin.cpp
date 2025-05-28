@@ -3,28 +3,35 @@
 
 namespace Online_Store {
 
+// Initializam pointerul static la nullptr
 Magazin* Magazin::m_instance = nullptr;
 
+// Constructor privat
 Magazin::Magazin() {}
 
+// Metoda statica pentru accesarea singleton-ului
 Magazin* Magazin::GetInstance() {
     if (!m_instance)
-        m_instance = new Magazin();
+        m_instance = new Magazin();  // Creeaza instanta daca nu exista
     return m_instance;
 }
 
+// Adauga un produs in catalog
 void Magazin::AdaugaProdus(const std::shared_ptr<Produs>& produs) {
     m_catalog.push_back(produs);
 }
 
+// Adauga un utilizator in sistem
 void Magazin::AdaugaUtilizator(const std::shared_ptr<Utilizator>& utilizator) {
     m_utilizatori.push_back(utilizator);
 }
 
+// Adauga o comanda
 void Magazin::AdaugaComanda(const Comanda& comanda) {
     m_comenzi.push_back(comanda);
 }
 
+// Afiseaza toate produsele din catalog
 void Magazin::AfiseazaCatalog() const {
     std::cout << "Catalog produse:\n";
     for (const auto& p : m_catalog) {
@@ -32,20 +39,23 @@ void Magazin::AfiseazaCatalog() const {
     }
 }
 
+// Afiseaza lista de utilizatori
 void Magazin::AfiseazaUtilizatori() const {
-    std::cout << "Utilizatori înregistrați:\n";
+    std::cout << "Utilizatori inregistrati:\n";
     for (const auto& u : m_utilizatori) {
         std::cout << u->GetTipUtilizator() << " - " << u->GetNumeUtilizator() << "\n";
     }
 }
 
+// Afiseaza toate comenzile inregistrate
 void Magazin::AfiseazaComenzi() const {
-    std::cout << "Comenzi înregistrate:\n";
+    std::cout << "Comenzi inregistrate:\n";
     for (const auto& c : m_comenzi) {
         c.AfiseazaComanda();
     }
 }
 
+// Cauta un produs dupa ID si returneaza un pointer shared
 std::shared_ptr<Produs> Magazin::CautaProdusDupaId(int id) const {
     for (const auto& p : m_catalog) {
         if (p->GetId() == id)
@@ -54,6 +64,7 @@ std::shared_ptr<Produs> Magazin::CautaProdusDupaId(int id) const {
     return nullptr;
 }
 
+// Citeste produse din fisier si le adauga in catalog
 void Magazin::CitesteProduseDinFisier(const std::string& fisier) {
     std::ifstream fin(fisier);
     std::string linie;
@@ -67,7 +78,7 @@ void Magazin::CitesteProduseDinFisier(const std::string& fisier) {
 
         std::getline(ss, linie, '\n');
         std::stringstream ls(linie);
-        std::getline(ls, linie, '\r'); // curăță newline Windows
+        std::getline(ls, linie, '\r'); // curata newline Windows
         std::stringstream cleanss(linie);
         cleanss >> id >> delim;
         std::getline(cleanss, nume, ',');
@@ -81,6 +92,7 @@ void Magazin::CitesteProduseDinFisier(const std::string& fisier) {
     fin.close();
 }
 
+// Citeste utilizatori din fisier
 void Magazin::CitesteUtilizatoriDinFisier(const std::string& fisier) {
     std::ifstream fin(fisier);
     std::string linie;
@@ -90,7 +102,7 @@ void Magazin::CitesteUtilizatoriDinFisier(const std::string& fisier) {
         int id;
         std::string tip, nume, email, extras;
 
-        std::getline(ss, linie, '\r'); // curăță newline Windows
+        std::getline(ss, linie, '\r'); // curata newline Windows
         std::stringstream parse(linie);
 
         std::string token;
@@ -110,6 +122,7 @@ void Magazin::CitesteUtilizatoriDinFisier(const std::string& fisier) {
     fin.close();
 }
 
+// Citeste comenzi din fisier
 void Magazin::CitesteComenziDinFisier(const std::string& fisier) {
     std::ifstream fin(fisier);
     std::string linie;
@@ -128,7 +141,7 @@ void Magazin::CitesteComenziDinFisier(const std::string& fisier) {
         std::getline(parse, data, ',');
         parse >> total;
 
-        // Produse nu sunt disponibile, simulăm cu vector gol
+        // Produse nu sunt disponibile, simulam cu vector gol
         Comanda comanda({}, data);
         m_comenzi.push_back(comanda);
     }
@@ -136,6 +149,7 @@ void Magazin::CitesteComenziDinFisier(const std::string& fisier) {
     fin.close();
 }
 
+// Salveaza produsele din catalog in fisier
 void Magazin::SalveazaProduseInFisier(const std::string& fisier) const {
     std::ofstream fout(fisier);
     for (const auto& p : m_catalog) {
@@ -149,6 +163,7 @@ void Magazin::SalveazaProduseInFisier(const std::string& fisier) const {
     fout.close();
 }
 
+// Salveaza utilizatorii in fisier
 void Magazin::SalveazaUtilizatoriInFisier(const std::string& fisier) const {
     std::ofstream fout(fisier);
     for (const auto& u : m_utilizatori) {
@@ -167,6 +182,7 @@ void Magazin::SalveazaUtilizatoriInFisier(const std::string& fisier) const {
     fout.close();
 }
 
+// Salveaza comenzile in fisier
 void Magazin::SalveazaComenziInFisier(const std::string& fisier) const {
     std::ofstream fout(fisier);
     for (const auto& c : m_comenzi) {
@@ -175,6 +191,5 @@ void Magazin::SalveazaComenziInFisier(const std::string& fisier) const {
     fout.close();
 }
 
-
-
 } // namespace Online_Store
+
