@@ -1,0 +1,2 @@
+g++ main.cpp Clase/administrator.cpp Clase/client.cpp Clase/comanda.cpp Clase/cos_cumparaturi.cpp Clase/factura.cpp Clase/magazin.cpp Clase/produs_electronic.cpp Clase/produs.cpp Clase/utilizator.cpp -o program
+./program
