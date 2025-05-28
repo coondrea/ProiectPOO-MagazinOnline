@@ -1,0 +1,10 @@
+101,Client,ana_popescu,ana@mail.com,Str. Florilor 22
+102,Client,vali_ionescu,vali@gmail.com,Str. Libertatii 5
+103,Client,roxana_c,roxana@yahoo.com,Bd. Independentei 99
+104,Client,david.m,david@exemplu.com,Str. Lalelelor 12
+105,Client,mihai_andrei,mihai@abc.com,Calea Unirii 7
+106,Client,laura.v,laura@mail.com,Str. Nucilor 8
+107,Client,george_k,george@net.com,Bd. Decebal 45
+1,Administrator,admin,admin@store.com,IT
+2,Administrator,lucia_admin,lucia@store.com,HR
+3,Administrator,paul_it,paul@store.com,Infrastructura

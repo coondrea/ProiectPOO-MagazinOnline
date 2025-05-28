@@ -1,0 +1,10 @@
+1,Laptop HP,Electronice,3500.0,10,24
+2,TV Samsung,Electronice,2200.0,5,12
+3,Monitor LG,Electronice,890.0,15,24
+4,Telefon iPhone,Electronice,4700.0,20,12
+5,Router TP-Link,Electronice,150.0,30,18
+6,Boxe JBL,Electronice,300.0,25,12
+7,SSD Kingston,Electronice,280.0,40,36
+8,Mouse Logitech,Electronice,130.0,50,24
+9,Tastatura Redragon,Electronice,190.0,35,24
+10,Camera Web Logitech,Electronice,270.0,10,24
