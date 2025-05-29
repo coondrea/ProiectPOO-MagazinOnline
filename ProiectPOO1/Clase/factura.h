@@ -9,10 +9,7 @@
 
 namespace Online_Store {
 
-/*
- * Clasa Factura reprezinta o factura generata pe baza unei comenzi.
- * Aceasta contine informatii despre TVA, discount, cod unic si totalul final.
- */
+// Clasa Factura reprezinta o factura generata pe baza unei comenzi.Aceasta contine informatii despre TVA, discount, cod unic si totalul final.
 class Factura {
 private:
     static int m_contor_cod;      // Contor static pentru coduri unice
@@ -42,14 +39,10 @@ public:
     const Comanda& GetComanda() const { return m_comanda; }
 };
 
-/*
- * Citeste toate facturile dintr-un fisier text si le adauga intr-un vector.
- */
+//Citeste toate facturile dintr-un fisier text si le adauga intr-un vector.
 void CitesteFacturiDinFisier(const std::string& fisier, std::vector<Factura>& facturi);
 
-/*
- * Salveaza o factura in fisierul specificat (append).
- */
+//Salveaza o factura in fisierul specificat (append).
 void SalveazaFacturaInFisier(const Factura& f, const std::string& fisier);
 
 } // namespace Online_Store
