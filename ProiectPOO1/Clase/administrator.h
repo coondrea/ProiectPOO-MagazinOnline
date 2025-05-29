@@ -5,11 +5,8 @@
 
 namespace Online_Store {
 
-/*
- * Clasa Administrator mosteneste clasa Utilizator
- * si adauga un atribut suplimentar: departamentul.
- * Este folosita pentru a simula rolul de administrator in cadrul magazinului online.
- */
+//Clasa Administrator mosteneste clasa Utilizator si adauga un atribut suplimentar: departamentul.Este folosita pentru a simula rolul de administrator in cadrul magazinului online.
+ 
 class Administrator : public Utilizator {
 private:
     std::string m_departament;  // Numele departamentului in care activeaza administratorul
