@@ -9,10 +9,7 @@
 
 namespace Online_Store {
 
-/*
- * Clasa Magazin gestioneaza catalogul de produse, lista de utilizatori si comenzile.
- * Este implementata ca Singleton pentru a asigura o singura instanta in aplicatie.
- */
+//Clasa Magazin gestioneaza catalogul de produse, lista de utilizatori si comenzile.Este implementata ca Singleton pentru a asigura o singura instanta in aplicatie.
 class Magazin {
 private:
     static Magazin* m_instance; // Instanta Singleton
@@ -24,74 +21,46 @@ private:
     Magazin(); // Constructor privat (Singleton)
 
 public:
-    /*
-     * Returneaza instanta Singleton a clasei Magazin.
-     */
+    //Returneaza instanta Singleton a clasei Magazin.
     static Magazin* GetInstance();
 
-    /*
-     * Adauga un produs in catalog.
-     */
+    // Adauga un produs in catalog.
     void AdaugaProdus(const std::shared_ptr<Produs>& produs);
 
-    /*
-     * Adauga un utilizator (client sau admin).
-     */
+    //Adauga un utilizator (client sau admin).
     void AdaugaUtilizator(const std::shared_ptr<Utilizator>& utilizator);
 
-    /*
-     * Adauga o comanda in lista comenzilor.
-     */
+    //Adauga o comanda in lista comenzilor.
     void AdaugaComanda(const Comanda& comanda);
 
-    /*
-     * Afiseaza toate produsele din catalog.
-     */
+    //Afiseaza toate produsele din catalog.
     void AfiseazaCatalog() const;
 
-    /*
-     * Afiseaza lista de utilizatori inregistrati.
-     */
+    //Afiseaza lista de utilizatori inregistrati.
     void AfiseazaUtilizatori() const;
 
-    /*
-     * Afiseaza toate comenzile procesate.
-     */
+    //Afiseaza toate comenzile procesate.
     void AfiseazaComenzi() const;
 
-    /*
-     * Citeste produse din fisier si le incarca in catalog.
-     */
+    //Citeste produse din fisier si le incarca in catalog.
     void CitesteProduseDinFisier(const std::string& fisier);
 
-    /*
-     * Citeste utilizatori (clienti/admini) din fisier.
-     */
+    //Citeste utilizatori (clienti/admini) din fisier.
     void CitesteUtilizatoriDinFisier(const std::string& fisier);
 
-    /*
-     * Citeste comenzi din fisier si le incarca in sistem.
-     */
+    //Citeste comenzi din fisier si le incarca in sistem.
     void CitesteComenziDinFisier(const std::string& fisier);
 
-    /*
-     * Salveaza produsele din catalog intr-un fisier.
-     */
+    //Salveaza produsele din catalog intr-un fisier.
     void SalveazaProduseInFisier(const std::string& fisier) const;
 
-    /*
-     * Salveaza utilizatorii inregistrati intr-un fisier.
-     */
+    //Salveaza utilizatorii inregistrati intr-un fisier.
     void SalveazaUtilizatoriInFisier(const std::string& fisier) const;
 
-    /*
-     * Salveaza comenzile efectuate intr-un fisier.
-     */
+    //Salveaza comenzile efectuate intr-un fisier.
     void SalveazaComenziInFisier(const std::string& fisier) const;
 
-    /*
-     * Cauta si returneaza un produs dupa ID. Returneaza nullptr daca nu exista.
-     */
+    //Cauta si returneaza un produs dupa ID. Returneaza nullptr daca nu exista.
     std::shared_ptr<Produs> CautaProdusDupaId(int id) const;
 };
 
