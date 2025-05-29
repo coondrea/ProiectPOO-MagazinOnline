@@ -15,7 +15,7 @@ private:
     double m_total;                                  // Totalul valoric al produselor din cos
 
     // Functie privata care recalculeaza totalul cosului dupa fiecare modificare
-    void _ActualizeazaTotal();
+    void ActualizeazaTotalPrivat();
 
 public:
     CosCumparaturi();
