@@ -8,10 +8,7 @@
 
 namespace Online_Store {
 
-/*
- * Clasa Comanda reprezinta o comanda plasata de un client.
- * Fiecare comanda are un ID unic, o lista de produse, o data si un total.
- */
+//Clasa Comanda reprezinta o comanda plasata de un client.Fiecare comanda are un ID unic, o lista de produse, o data si un total.
 class Comanda {
 private:
     static int m_nr_total_comenzi;  // Contor static pentru a genera ID-uri unice
