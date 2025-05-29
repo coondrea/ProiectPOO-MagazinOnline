@@ -15,7 +15,7 @@ Produs::Produs(int id, const std::string& nume, const std::string& categorie, do
     m_stoc = stoc;
 }
 
-// Destructor
+
 Produs::~Produs() {}
 
 // Verifica daca pretul este valid (>= 0)
