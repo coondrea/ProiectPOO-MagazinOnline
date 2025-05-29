@@ -7,11 +7,8 @@
 
 namespace Online_Store {
 
-/*
- * Clasa CosCumparaturi gestioneaza lista de produse adaugate de un client.
- * Aceasta permite adaugarea, stergerea, afisarea si golirea produselor,
- * precum si obtinerea totalului si a numarului de produse.
- */
+// Clasa CosCumparaturi gestioneaza lista de produse adaugate de un client. Aceasta permite adaugarea, stergerea, afisarea si golirea produselor, precum si obtinerea totalului si a numarului de produse.
+ 
 class CosCumparaturi {
 private:
     std::vector<std::shared_ptr<Produs>> m_produse;  // Produsele adaugate in cos
@@ -21,7 +18,6 @@ private:
     void _ActualizeazaTotal();
 
 public:
-    // Constructor implicit
     CosCumparaturi();
 
     // Adauga un produs in cos
