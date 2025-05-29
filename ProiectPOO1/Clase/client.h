@@ -6,17 +6,15 @@
 
 namespace Online_Store {
 
-/*
- * Clasa Client mosteneste clasa Utilizator si adauga functionalitati specifice unui client:
- * adresa de livrare si o lista de comenzi (identificate prin ID-uri).
- */
+//Clasa Client mosteneste clasa Utilizator si adauga functionalitati specifice unui client: adresa de livrare si o lista de comenzi (identificate prin ID-uri).
+ 
 class Client : public Utilizator {
 private:
     std::string m_adresa_livrare;        // Adresa de livrare asociata clientului
     std::vector<int> m_id_comenzi;       // Lista de ID-uri ale comenzilor plasate
 
 public:
-    // Constructor implicit
+    
     Client();
 
     // Constructor cu parametri pentru initializarea tuturor atributelor clientului
