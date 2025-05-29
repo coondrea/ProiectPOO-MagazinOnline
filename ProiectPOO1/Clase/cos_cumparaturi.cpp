@@ -7,7 +7,7 @@ namespace Online_Store {
 CosCumparaturi::CosCumparaturi() : m_total(0.0) {}
 
 // Functie privata care recalculeaza totalul cosului pe baza preturilor produselor curente. 
-void CosCumparaturi::_ActualizeazaTotal() {
+void CosCumparaturi:: ActualizeazaTotalPrivat() {
     m_total = 0.0;
     for (const auto& p : m_produse) {
         m_total += p->GetPret();
@@ -17,7 +17,7 @@ void CosCumparaturi::_ActualizeazaTotal() {
 // Adauga un produs in cos si actualizeaza totalul.
 void CosCumparaturi::AdaugaProdus(const std::shared_ptr<Produs>& produs) {
     m_produse.push_back(produs);
-    _ActualizeazaTotal();
+     ActualizeazaTotalPrivat();
 }
 
 // Sterge produsul cu ID-ul specificat din cos, daca exista,si actualizeaza totalul. 
@@ -28,7 +28,7 @@ void CosCumparaturi::StergeProdus(int id_produs) {
                            return p->GetId() == id_produs;
                        }),
         m_produse.end());
-    _ActualizeazaTotal();
+     ActualizeazaTotalPrivat();
 }
 
 // Goleste complet cosul de cumparaturi si reseteaza totalul. 
