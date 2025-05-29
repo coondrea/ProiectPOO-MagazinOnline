@@ -7,7 +7,7 @@ namespace Online_Store {
 CosCumparaturi::CosCumparaturi() : m_total(0.0) {}
 
 // Functie privata care recalculeaza totalul cosului pe baza preturilor produselor curente. 
-void CosCumparaturi:: ActualizeazaTotalPrivat() {
+void CosCumparaturi::ActualizeazaTotalPrivat() {
     m_total = 0.0;
     for (const auto& p : m_produse) {
         m_total += p->GetPret();
