@@ -21,13 +21,12 @@ private:
     void _CalculeazaTotal();
 
 public:
-    // Constructor implicit
+
     Comanda();
 
     // Constructor cu parametri: lista de produse si data
     Comanda(const std::vector<std::shared_ptr<Produs>>& produse, const std::string& data);
 
-    // Destructor
     ~Comanda();
 
     // Returneaza ID-ul comenzii
