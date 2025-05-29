@@ -5,12 +5,10 @@
 
 namespace Online_Store {
 
-/* Initializarea contorului static pentru generarea codurilor unice de factura. */
+// Initializarea contorului static pentru generarea codurilor unice de factura. 
 int Factura::m_contor_cod = 1000;
 
-/* Constructor pentru Factura.
-   Primeste o comanda, procentul de discount si procentul TVA.
-   Genereaza un cod unic si apoi calculeaza valorile finale. */
+// Constructor pentru Factura.Primeste o comanda, procentul de discount si procentul TVA.Genereaza un cod unic si apoi calculeaza valorile finale.
 Factura::Factura(const Comanda& comanda, double discount, double tva)
     : m_comanda(comanda), m_discount_aplicat(discount), m_tva(tva) {
     std::stringstream ss;
@@ -19,41 +17,34 @@ Factura::Factura(const Comanda& comanda, double discount, double tva)
     _CalculeazaValori();            // Calculeaza total cu TVA si discount
 }
 
-/* Functie privata care calculeaza:
-   - totalul comenzii
-   - total dupa aplicarea discountului
-   - total cu TVA inclus */
+// Functie privata care calculeaza:totalul comenzii,total dupa aplicarea discountului,total cu TVA inclus 
 void Factura::_CalculeazaValori() {
     double total = m_comanda.GetTotal();
     double total_discountat = total - (total * m_discount_aplicat);
     m_total_cu_tva = total_discountat + (total_discountat * m_tva);
 }
 
-/* Returneaza codul unic al facturii. */
+// Returneaza codul unic al facturii
 std::string Factura::GetCodFactura() const {
     return m_cod_factura;
 }
 
-/* Returneaza totalul facturii cu TVA inclus. */
+// Returneaza totalul facturii cu TVA inclus. 
 double Factura::GetTotalCuTVA() const {
     return m_total_cu_tva;
 }
 
-/* Returneaza procentul de TVA utilizat. */
+// Returneaza procentul de TVA utilizat. 
 double Factura::GetTVA() const {
     return m_tva;
 }
 
-/* Returneaza procentul de discount aplicat. */
+// Returneaza procentul de discount aplicat. 
 double Factura::GetDiscount() const {
     return m_discount_aplicat;
 }
 
-/* Afiseaza detaliile facturii:
-   - cod factura
-   - continut comanda
-   - discount si TVA
-   - total final */
+// Afiseaza detaliile facturii:cod factura,continut comanda,discount si TVA,total final 
 void Factura::AfiseazaFactura() const {
     std::cout << "Factura #" << m_cod_factura << "\n";
     m_comanda.AfiseazaComanda();
@@ -63,8 +54,7 @@ void Factura::AfiseazaFactura() const {
               << m_total_cu_tva << " lei\n";
 }
 
-/* Citeste facturile dintr-un fisier text si le adauga in vectorul facturi.
-   Fiecare linie trebuie sa fie: CodFactura,ComandaID,TVA,Discount,TotalFinal */
+// Citeste facturile dintr-un fisier text si le adauga in vectorul facturi.Fiecare linie trebuie sa fie: CodFactura,ComandaID,TVA,Discount,TotalFinal 
 void CitesteFacturiDinFisier(const std::string& fisier, std::vector<Factura>& facturi) {
     std::ifstream fin(fisier);
     std::string linie;
@@ -89,7 +79,7 @@ void CitesteFacturiDinFisier(const std::string& fisier, std::vector<Factura>& fa
     fin.close();
 }
 
-/* Salveaza o factura in fisierul text, adaugand-o la final (append). */
+// Salveaza o factura in fisierul text, adaugand-o la final (append)
 void SalveazaFacturaInFisier(const Factura& f, const std::string& fisier) {
     std::ofstream fout(fisier, std::ios::app);
     fout << f.GetCodFactura() << ","
