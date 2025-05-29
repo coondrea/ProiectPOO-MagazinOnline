@@ -15,7 +15,6 @@ ProdusElectronic::ProdusElectronic(int id, const std::string& nume, const std::s
     m_garantie_luni = garantie;
 }
 
-// Destructor
 ProdusElectronic::~ProdusElectronic() {}
 
 // Metoda privata care verifica daca valoarea garantiei este valida
@@ -24,12 +23,12 @@ void ProdusElectronic::_ValidareGarantie(int luni) {
         throw std::invalid_argument("Garantie invalida (0-60 luni)");
 }
 
-// Getter pentru numarul de luni garantie
+
 int ProdusElectronic::GetGarantie() const {
     return m_garantie_luni;
 }
 
-// Setter cu validare pentru actualizarea garantiei
+
 void ProdusElectronic::SetGarantie(int luni) {
     _ValidareGarantie(luni);
     m_garantie_luni = luni;
