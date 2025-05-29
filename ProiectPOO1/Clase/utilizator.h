@@ -14,16 +14,16 @@ protected:
     std::string m_email;              // Adresa de email
 
 public:
-    Utilizator(); // Constructor implicit
-    Utilizator(int id, const std::string& nume_utilizator, const std::string& email); // Constructor cu parametri
-    virtual ~Utilizator(); // Destructor virtual
+    Utilizator(); 
+    Utilizator(int id, const std::string& nume_utilizator, const std::string& email); 
+    virtual ~Utilizator(); 
 
-    // Getteri pentru accesarea membrilor privati
+    
     int GetId() const;
     std::string GetNumeUtilizator() const;
     std::string GetEmail() const;
 
-    // Setter pentru modificarea emailului
+   
     void SetEmail(const std::string& email);
 
     // Metode virtuale pure ce trebuie implementate de clasele derivate
