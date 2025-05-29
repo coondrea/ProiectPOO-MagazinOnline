@@ -6,14 +6,12 @@ namespace Online_Store {
 // Initializare a variabilei statice care contorizeaza comenzile
 int Comanda::m_nr_total_comenzi = 0;
 
-/* Constructor implicit.
-   Seteaza data ca "N/A", totalul pe 0 si genereaza un ID unic pentru comanda. */
+// Constructor implicit.Seteaza data ca "N/A", totalul pe 0 si genereaza un ID unic pentru comanda. 
 Comanda::Comanda() : m_data("N/A"), m_total(0.0) {
     m_id = ++m_nr_total_comenzi;
 }
 
-/* Constructor cu parametri.
-   Primeste o lista de produse si data comenzii, seteaza campurile si calculeaza totalul. */
+// Constructor cu parametri.Primeste o lista de produse si data comenzii, seteaza campurile si calculeaza totalul. 
 Comanda::Comanda(const std::vector<std::shared_ptr<Produs>>& produse, const std::string& data)
     : m_produse(produse), m_data(data) {
     m_id = ++m_nr_total_comenzi;
@@ -23,7 +21,7 @@ Comanda::Comanda(const std::vector<std::shared_ptr<Produs>>& produse, const std:
 // Destructorul comenzii (nu efectueaza actiuni explicite)
 Comanda::~Comanda() {}
 
-/* Functie privata pentru calculul totalului comenzii pe baza pretului fiecarui produs. */
+// Functie privata pentru calculul totalului comenzii pe baza pretului fiecarui produs. 
 void Comanda::_CalculeazaTotal() {
     m_total = 0.0;
     for (const auto& p : m_produse) {
@@ -46,12 +44,7 @@ std::string Comanda::GetData() const {
     return m_data;
 }
 
-/* Afiseaza detalii despre comanda:
-   - ID-ul
-   - data
-   - lista produselor
-   - totalul comenzii
- */
+// Afiseaza detalii despre comanda: ID-ul,data,lista produselor,totalul comenzii
 void Comanda::AfiseazaComanda() const {
     std::cout << "Comanda #" << m_id << " din data " << m_data << ":\n";
     for (const auto& p : m_produse) {
